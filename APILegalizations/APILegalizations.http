@@ -1,0 +1,6 @@
+@APILegalizations_HostAddress = http://localhost:5017
+
+GET {{APILegalizations_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
