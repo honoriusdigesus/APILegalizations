@@ -12,11 +12,13 @@ namespace APILegalizations.Presenter.Controller
     {
         private readonly LoginPresenterMapper _loginPresenterMapper;
         private readonly Login _login;
+        private readonly RefreshToken _refreshToken;
 
-        public LoginController(LoginPresenterMapper loginPresenterMapper, Login login)
+        public LoginController(LoginPresenterMapper loginPresenterMapper, Login login, RefreshToken refreshToken)
         {
             _loginPresenterMapper = loginPresenterMapper;
             _login = login;
+            _refreshToken = refreshToken;
         }
 
         [HttpPost("auth")]
@@ -26,5 +28,13 @@ namespace APILegalizations.Presenter.Controller
             var loginResponse = await _login.Execute(loginDomainReq);
             return Ok(loginResponse);
         }
-    }
+
+        [HttpPost("refresh-token")]
+        public async Task<IActionResult> RefreshToken([FromBody] string refreshToken)
+        {
+            var loginResponse = await _refreshToken.Refresh(refreshToken);
+            return Ok(loginResponse);
+        }
+
+        }
 }

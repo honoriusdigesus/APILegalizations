@@ -16,15 +16,13 @@ namespace APILegalizations.Domain.Usecases
     {
         private readonly Helper _helper;
         private readonly LegalizationContext _context;
-        private readonly RefreshTokenDomainMapper _refreshTokenDomainMapper;
         private readonly UtilsJwt _utilsJwt;
         private readonly UserDomainMapper _userDomainMapper;
 
-        public Login(Helper helper, LegalizationContext context, RefreshTokenDomainMapper refreshTokenDomainMapper, UtilsJwt utilsJwt, UserDomainMapper userDomainMapper)
+        public Login(Helper helper, LegalizationContext context,UtilsJwt utilsJwt, UserDomainMapper userDomainMapper)
         {
             _helper = helper;
             _context = context;
-            _refreshTokenDomainMapper = refreshTokenDomainMapper;
             _utilsJwt = utilsJwt;
             _userDomainMapper = userDomainMapper;
         }

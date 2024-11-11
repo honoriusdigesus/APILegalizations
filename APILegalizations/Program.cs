@@ -28,12 +28,12 @@ try
     builder.Services.AddScoped<UserPresenterMapper>();
 
     builder.Services.AddScoped<Login>();
-    builder.Services.AddScoped<RefreshTokenDomainMapper>();
     builder.Services.AddScoped<UtilsJwt>();
     builder.Services.AddScoped<LoginPresenterMapper>();
 
 
     builder.Services.AddScoped<CreateUser>();
+    builder.Services.AddScoped<RefreshToken>();
     builder.Services.AddScoped<Helper>();
 
 }
